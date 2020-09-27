@@ -39,7 +39,7 @@ The repo (default `oyd.dec112`) uses the following structure:
 }
 ```
 
-## Improve the Consent Information App
+## Improve the DEC112 App
 
 Please report bugs and suggestions for new features using the [GitHub Issue-Tracker](https://github.com/OwnYourData/app-dec112/issues) and follow the [Contributor Guidelines](https://github.com/twbs/ratchet/blob/master/CONTRIBUTING.md).
 
