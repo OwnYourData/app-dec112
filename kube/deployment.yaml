@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-dec112-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-dec112
+  template:
+    metadata:
+      labels:
+        app: app-dec112
+    spec:
+      containers:
+      - name: app-dec112
+        image: oydeu/app-dec112:latest
+        ports:
+        - containerPort: 3000
+        env:
+          - name: LANG
+            value: C.UTF-8
+          - name: RAILS_LOG_TO_STDOUT
+            value: "TRUE"
+          - name: RAILS_SERVE_STATIC_FILES
+            value: "TRUE"
+          - name: RAILS_ENV
+            value: production
+          - name: SECRET_KEY_BASE
+            valueFrom:
+              secretKeyRef:
+                name: app-dec112-secrets
+                key: secret-key-base

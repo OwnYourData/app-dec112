@@ -1,0 +1,69 @@
+<% provide(:title, t('general.title')) %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#attrib" aria-controls="attrib" role="tab" data-toggle="tab"><%= t('entry.form') %></a></li>
+				<li role="presentation"><a href="#raw" aria-controls="raw" role="tab" data-toggle="tab">Raw data</a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="attrib">
+					<%= form_with url: write_path, html: { class: "form-horizontal", style: "margin-top: 20px;" }, role: "form" do |form| %>
+						<div class="form-group">
+							<label for="title" class="col-sm-3 control-label"><%= t('entry.title') %>:</label>
+							<div class="col-sm-9">
+								<%= form.text_field :title, value: @title, class: "from-control", style: "width: 400px;" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="surname" class="col-sm-3 control-label"><%= t('entry.firstname') %>:</label>
+							<div class="col-sm-9">
+								<%= form.text_field :firstname, value: @firstname, class: "from-control", style: "width: 400px;" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-3 control-label"><%= t('entry.lastname') %>:</label>
+							<div class="col-sm-9">
+								<%= form.text_field :lastname, value: @lastname, class: "from-control", style: "width: 400px;" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="address" class="col-sm-3 control-label"><%= t('entry.address') %>:</label>
+							<div class="col-sm-9">
+								<%= form.text_field :address, value: @address, class: "from-control", style: "width: 400px;" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="zip_code" class="col-sm-3 control-label"><%= t('entry.zip') %>:</label>
+							<div class="col-sm-9">
+								<%= form.text_field :zip_code, value: @zip_code, class: "from-control", style: "width: 400px;" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="city" class="col-sm-3 control-label"><%= t('entry.city') %>:</label>
+							<div class="col-sm-9">
+								<%= form.text_field :city, value: @city, class: "from-control", style: "width: 400px;" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="mail" class="col-sm-3 control-label"><%= t('entry.mail') %>:</label>
+							<div class="col-sm-9">
+								<%= form.text_field :mail, value: @mail, class: "from-control", style: "width: 400px;" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+								<%= form.button t('general.save'), class: "btn btn-primary" %>
+							</div>
+						</div>
+					<% end %>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="raw">
+					<pre style="margin: 10px;"><%= @dec_raw %></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
