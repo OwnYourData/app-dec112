@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.5.7'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -7,9 +9,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
-gem "actionview", ">= 5.1.6.2"
-gem "activejob", ">= 5.1.6.1"
+gem 'rails', '~> 5.2.3'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.6'
